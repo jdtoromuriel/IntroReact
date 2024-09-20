@@ -10,16 +10,23 @@ export class ComponenteClase extends React.Component{
 }
 
 // Componente funcional
-export function ComponenteFuncional(){
+export function ComponenteFuncional({datos}){
+    let {nombre, salario, funciones} = datos;
     return(
-        <h1>Componente funcional</h1>
+        <>
+            <h1>Datos del empleado</h1>
+            <p>Nombre: {nombre}</p>
+            <p>Salario: {salario}</p>
+            <p>Nombre: {funciones.map((f)=> (f + " - "))}</p>
+        </>
     )
 }
 
 // Componente flecha
 
-export let ComponenteFlecha = () => {
+export let ComponenteFlecha = (props) => {
+    console.log(props)
     return(
-        <h1>Componente Flecha</h1>
+        <h1>{props.saludo}</h1>
     )
 }
